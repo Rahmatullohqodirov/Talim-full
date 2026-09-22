@@ -1,0 +1,44 @@
+.quiz-pending-banner {
+  background: oklch(0.93 0.08 85 / 0.5);
+  border: 1px solid oklch(0.7 0.15 85 / 0.5);
+  color: oklch(0.4 0.1 85);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 10px 14px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.quiz-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; }
+.quiz-tile {
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px;
+  padding: 20px; cursor: pointer; transition: border-color .15s, transform .15s;
+}
+.quiz-tile:hover { border-color: var(--accent); transform: translateY(-2px); }
+.quiz-tile-title { font-weight: 700; font-size: 15px; margin-bottom: 6px; }
+.quiz-tile-meta { font-size: 12.5px; color: var(--text-muted); }
+
+.quiz-runner-title { font-weight: 800; font-size: 19px; margin-bottom: 18px; }
+.quiz-question { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 18px; margin-bottom: 14px; }
+.quiz-question-text { font-weight: 700; font-size: 14.5px; margin-bottom: 12px; }
+.quiz-choices { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.quiz-choice {
+  text-align: left; padding: 10px 14px; border-radius: 10px; border: 1.5px solid var(--border);
+  background: white; font-size: 13.5px; cursor: pointer; transition: all .15s;
+}
+.quiz-choice:hover { border-color: var(--accent); }
+.quiz-choice.selected { border-color: var(--accent); background: var(--accent-soft); font-weight: 700; }
+
+.quiz-result { max-width: 560px; text-align: center; margin: 0 auto; }
+.quiz-result-score { font-family: var(--font-display); font-size: 48px; font-weight: 800; color: oklch(0.55 0.15 155); }
+.quiz-result-sub { color: var(--text-muted); font-size: 14px; margin-bottom: 24px; }
+.quiz-review { text-align: left; display: flex; flex-direction: column; gap: 10px; }
+.quiz-review-item { border-radius: 10px; padding: 12px 14px; border: 1.5px solid var(--border); }
+.quiz-review-item.ok { border-color: oklch(0.6 0.15 155 / 0.4); background: oklch(0.6 0.15 155 / 0.06); }
+.quiz-review-item.bad { border-color: oklch(0.6 0.18 25 / 0.4); background: oklch(0.6 0.18 25 / 0.06); }
+.quiz-review-q { font-weight: 600; font-size: 13.5px; margin-bottom: 4px; }
+.quiz-review-a { font-size: 12.5px; color: var(--text-muted); }
+
+@media (max-width: 640px) {
+  .quiz-choices { grid-template-columns: 1fr; }
+}

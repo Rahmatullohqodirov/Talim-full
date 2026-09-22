@@ -1,0 +1,11 @@
+.math-grid { display: grid; grid-template-columns: 1fr 260px; gap: 20px; }
+.math-card { background: var(--bg-card); border-radius: 14px; border: 1px solid var(--border); padding: 26px; }
+.math-topic { font-size: 12px; font-weight: 700; color: var(--accent-hover); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 10px; }
+.math-statement { font-size: 20px; font-weight: 700; margin-bottom: 20px; }
+.math-feedback { margin-top: 16px; padding: 12px 16px; border-radius: 10px; font-size: 14px; font-weight: 600; }
+.math-feedback.correct { background: var(--success-soft); color: oklch(0.4 0.15 155); }
+.math-feedback.wrong { background: var(--danger-soft); color: var(--danger); }
+.steps-list { margin-top: 18px; border-top: 1px solid var(--border); padding-top: 16px; }
+.step-line { font-size: 14px; padding: 6px 0; font-family: "SF Mono", Menlo, monospace; }
+.weak-panel { background: var(--bg-card); border-radius: 14px; border: 1px solid var(--border); padding: 20px; }
+.weak-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid oklch(0.95 0.005 260); font-size: 13.5px; }

@@ -1,0 +1,37 @@
+:root {
+  --bg-page: oklch(0.97 0.005 260);
+  --bg-card: oklch(1 0 0);
+  --border: oklch(0.92 0.01 260);
+  --text: oklch(0.22 0.02 260);
+  --text-muted: oklch(0.5 0.02 260);
+  --accent: oklch(0.56 0.19 275);
+  --accent-hover: oklch(0.5 0.19 275);
+  --accent-soft: oklch(0.93 0.05 275);
+  --success: oklch(0.6 0.15 155);
+  --success-soft: oklch(0.94 0.05 155);
+  --danger: oklch(0.55 0.2 25);
+  --danger-soft: oklch(0.96 0.04 25);
+  --sidebar-bg: oklch(0.2 0.02 275);
+  --font-display: -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-body: -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; font-family: var(--font-body); background: var(--bg-page); color: var(--text); }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; }
+input { font-family: inherit; }
+
+.btn {
+  border: none; border-radius: 10px; font-weight: 700; font-size: 14.5px; cursor: pointer; padding: 12px 20px;
+}
+.btn-primary { background: var(--accent); color: white; }
+.btn-primary:hover { background: var(--accent-hover); }
+.btn-outline { background: white; border: 1.5px solid var(--border); color: var(--text); }
+.btn-outline:hover { border-color: var(--accent); color: var(--accent-hover); }
+
+.input {
+  width: 100%; padding: 12px 14px; border-radius: 10px; border: 1.5px solid var(--border);
+  font-size: 14.5px; outline: none;
+}
+.input:focus { border-color: var(--accent); }

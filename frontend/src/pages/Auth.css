@@ -1,0 +1,21 @@
+.auth-wrap { display: grid; grid-template-columns: 1fr 1fr; min-height: 100vh; }
+.auth-side {
+  background: linear-gradient(155deg, oklch(0.3 0.1 275), oklch(0.5 0.17 275));
+  display: flex; flex-direction: column; justify-content: space-between; padding: 56px; color: white;
+}
+.auth-side h1 { font-family: var(--font-display); font-size: 36px; font-weight: 800; line-height: 1.15; margin: 0 0 16px; }
+.auth-brand { font-family: var(--font-display); font-weight: 800; font-size: 22px; }
+.auth-preview {
+  border: 1px dashed oklch(0.8 0.05 275 / 0.5); border-radius: 14px; padding: 20px;
+  font-family: "SF Mono", Menlo, monospace; font-size: 12px; color: oklch(0.9 0.02 275);
+  background: repeating-linear-gradient(135deg, oklch(1 0 0 / 0.04) 0 10px, transparent 10px 20px);
+}
+.auth-form-side { display: flex; align-items: center; justify-content: center; padding: 40px; background: white; }
+.auth-form { width: 100%; max-width: 380px; }
+.auth-form h2 { font-family: var(--font-display); font-size: 26px; font-weight: 800; margin: 0 0 6px; }
+.auth-form p.sub { font-size: 14px; color: var(--text-muted); margin: 0 0 28px; }
+.field { margin-bottom: 16px; }
+.field label { font-size: 12.5px; font-weight: 600; color: var(--text-muted); display: block; margin-bottom: 6px; }
+.auth-error { font-size: 13px; color: var(--danger); background: var(--danger-soft); border-radius: 8px; padding: 8px 12px; margin-bottom: 16px; }
+.auth-switch { text-align: center; font-size: 13.5px; color: var(--text-muted); margin-top: 24px; }
+.auth-switch a { color: var(--accent-hover); font-weight: 600; }

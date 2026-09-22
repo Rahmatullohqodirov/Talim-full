@@ -1,0 +1,13 @@
+.app-shell { display: grid; grid-template-columns: 240px 1fr; min-height: 100vh; }
+.sidebar { background: var(--sidebar-bg); color: white; display: flex; flex-direction: column; padding: 24px 16px; gap: 4px; }
+.sidebar-brand { font-family: var(--font-display); font-weight: 800; font-size: 18px; padding: 0 10px 24px; }
+.nav-item { display: flex; align-items: center; gap: 10px; padding: 11px 14px; border-radius: 9px; cursor: pointer; font-size: 14.5px; font-weight: 600; color: oklch(0.82 0.02 275); }
+.nav-item:hover, .nav-item.active { background: oklch(1 0 0 / 0.1); color: white; }
+.nav-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+.role-toggle { font-size: 12px; color: oklch(0.75 0.02 275); padding: 10px 14px; border-radius: 9px; cursor: pointer; border: 1px dashed oklch(1 0 0 / 0.2); margin-bottom: 6px; }
+.role-toggle:hover { background: oklch(1 0 0 / 0.06); }
+.logout-item { padding: 11px 14px; font-size: 14px; color: oklch(0.75 0.02 275); cursor: pointer; }
+.logout-item:hover { color: white; }
+.content { padding: 32px 40px; overflow-y: auto; }
+.page-title { font-family: var(--font-display); font-size: 26px; font-weight: 800; margin: 0 0 4px; }
+.page-sub { color: var(--text-muted); font-size: 14.5px; margin: 0 0 28px; }

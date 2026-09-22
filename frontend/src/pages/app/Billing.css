@@ -1,0 +1,7 @@
+.billing-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; max-width: 640px; margin-bottom: 32px; }
+.plan-tile { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 22px; }
+.plan-tile-name { font-weight: 700; font-size: 15px; margin-bottom: 6px; }
+.plan-tile-price { font-family: var(--font-display); font-size: 26px; font-weight: 800; margin-bottom: 16px; }
+.provider-toggle { display: flex; gap: 6px; margin-bottom: 12px; }
+.provider-btn { flex: 1; padding: 8px 0; border-radius: 9px; border: 1px solid var(--border); background: transparent; font-size: 12.5px; font-weight: 700; color: var(--text-muted); cursor: pointer; transition: all .15s; }
+.provider-btn.active { background: oklch(0.45 0.15 275); border-color: oklch(0.45 0.15 275); color: #fff; }
