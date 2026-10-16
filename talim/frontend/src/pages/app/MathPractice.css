@@ -1,0 +1,80 @@
+/* Matematika — mavzular paneli + bitta masala kartasi */
+.mp { display: flex; flex-direction: column; gap: 14px; }
+.mp > .ui-head { margin-bottom: 0; }
+.mp-session { font-size: 14px; color: var(--u-ink-soft); background: var(--u-card); border: 1px solid var(--u-line); padding: 8px 14px; border-radius: 999px; }
+.mp-session strong { color: var(--u-ink); }
+.mp-grid { display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: 16px; align-items: start; }
+
+.mp-topics { padding: 16px 12px; position: sticky; top: 16px; }
+.mp-topics h2 { padding: 0 8px; }
+.mp-topics > .ui-faint { padding: 0 8px; margin: 2px 0 10px; }
+.mp-topics ul { list-style: none; margin: 0 0 14px; padding: 0; }
+.mp-topics li button {
+  width: 100%; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 8px; align-items: center; text-align: left;
+  padding: 9px 10px; border: none; border-radius: 10px; background: transparent; cursor: pointer; font-size: 14.5px; color: var(--u-ink);
+}
+.mp-topics li button:hover { background: var(--u-paper); }
+.mp-topics li button.on { background: var(--u-accent-wash); }
+.mp-topic-count { font-size: 12.5px; color: var(--u-ink-soft); }
+.mp-topic-bar { grid-column: 1 / -1; height: 3px; border-radius: 2px; background: var(--u-line); overflow: hidden; }
+.mp-topic-bar i { display: block; height: 100%; background: var(--u-ok); }
+.mp-diff { display: flex; width: 100%; }
+.mp-diff button { flex: 1; padding: 7px 4px; font-size: 12.5px; }
+
+.mp-main { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.mp-problem { padding: 28px; }
+.mp-meta { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin-bottom: 18px; }
+.mp-count { margin-left: auto; }
+.mp-d2 { background: var(--u-pen-wash); color: #9a5b00; border-color: transparent; }
+.mp-d3 { background: var(--u-bad-wash); color: #9a2f05; border-color: transparent; }
+.mp-statement { font-size: clamp(21px, 2.4vw, 27px); font-weight: 600; line-height: 1.4; letter-spacing: -0.01em; margin: 0 0 24px; font-variant-numeric: lining-nums; }
+
+.mp-answer {
+  display: flex; align-items: center; gap: 10px; padding: 6px 6px 6px 16px; border-radius: 14px;
+  border: 1.5px solid var(--u-line); background: var(--u-card); transition: border-color .15s, box-shadow .15s;
+}
+.mp-answer:focus-within { border-color: var(--u-accent); box-shadow: 0 0 0 4px var(--u-accent-wash); }
+.mp-answer.ok { border-color: var(--u-ok); background: var(--u-ok-wash); }
+.mp-answer.bad { border-color: var(--u-pen); }
+.mp-answer-label { font-size: 13px; font-weight: 600; color: var(--u-ink-faint); }
+.mp-answer input { flex: 1; min-width: 0; border: none; outline: none; background: transparent; font: inherit; font-size: 20px; font-weight: 600; height: 44px; color: var(--u-ink); }
+.mp-answer input:focus-visible { outline: none; }
+.mp-keys { display: flex; gap: 6px; margin-top: 10px; flex-wrap: wrap; }
+.mp-keys button {
+  min-width: 40px; height: 36px; padding: 0 10px; border-radius: 10px; border: 1px solid var(--u-line); background: var(--u-paper);
+  font: inherit; font-size: 15px; font-weight: 600; cursor: pointer; color: var(--u-ink);
+}
+.mp-keys button:hover:not(:disabled) { border-color: var(--u-accent); background: var(--u-accent-wash); }
+
+.mp-feedback { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-top: 16px; padding: 12px 14px; border-radius: 12px; background: var(--u-paper); font-size: 15px; }
+.mp-feedback.ok { background: var(--u-ok-wash); color: oklch(0.38 0.1 155); }
+.mp-feedback.bad { background: var(--u-pen-wash); color: #6b4300; }
+.mp-help { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--u-line); }
+.mp-hint, .mp-ai {
+  margin-top: 14px; padding: 12px 16px 12px 18px; border-left: 3px solid var(--u-pen); border-radius: 4px 12px 12px 4px;
+  background: var(--u-pen-wash); color: #4a3a17; font-size: 15px; line-height: 1.6;
+}
+.mp-ai { border-left-color: var(--u-accent); background: var(--u-accent-wash); color: var(--u-ink); }
+.mp-hint b, .mp-ai b { display: block; font-size: 12.5px; margin-bottom: 2px; color: #9a5b00; }
+.mp-ai b { color: var(--u-accent-ink); }
+.mp-ai p { margin: 0 0 8px; }
+.mp-steps { margin: 14px 0 0; padding: 14px 16px 14px 40px; border-radius: 12px; background: var(--u-paper); font-size: 16px; line-height: 1.8; font-variant-numeric: lining-nums; }
+
+.mp-strip { display: flex; flex-wrap: wrap; gap: 6px; }
+.mp-strip button {
+  width: 36px; height: 36px; border-radius: 10px; border: 1px solid var(--u-line); background: var(--u-card); cursor: pointer;
+  font: inherit; font-size: 13.5px; font-weight: 600; color: var(--u-ink-soft);
+}
+.mp-strip button.tried { border-color: var(--u-pen); color: #9a5b00; }
+.mp-strip button.solved { background: var(--u-ok-wash); border-color: transparent; color: oklch(0.42 0.12 155); }
+.mp-strip button.on { outline: 2px solid var(--u-accent); outline-offset: 1px; }
+
+@media (max-width: 900px) {
+  .mp-grid { grid-template-columns: minmax(0, 1fr); }
+  .mp-topics { position: static; }
+  .mp-topics ul { display: flex; overflow-x: auto; gap: 6px; margin-bottom: 10px; }
+  .mp-topics li { flex-shrink: 0; }
+  .mp-topics li button { white-space: nowrap; display: inline-flex; gap: 8px; width: auto; border: 1px solid var(--u-line); border-radius: 999px; padding: 7px 12px; }
+  .mp-topic-bar { display: none; }
+  .mp-problem { padding: 20px 16px; }
+}

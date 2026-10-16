@@ -1,0 +1,67 @@
+.lang-switcher {
+  position: fixed;
+  bottom: 18px;
+  right: 18px;
+  z-index: 1000;
+}
+
+.lang-switcher-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 13px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(20, 18, 30, 0.85);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  transition: transform 0.15s, border-color 0.15s;
+}
+.lang-switcher-btn:hover { transform: translateY(-1px); border-color: rgba(255, 255, 255, 0.35); }
+
+.lang-flag { font-size: 15px; line-height: 1; }
+.lang-code { letter-spacing: 0.03em; }
+.lang-caret { font-size: 10px; opacity: 0.7; }
+
+.lang-menu {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  right: 0;
+  width: 190px;
+  background: #19161f;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  padding: 6px;
+  list-style: none;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.lang-option {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  width: 100%;
+  padding: 9px 10px;
+  border-radius: 9px;
+  border: none;
+  background: transparent;
+  color: #e9e6f0;
+  font-size: 13.5px;
+  text-align: left;
+  cursor: pointer;
+}
+.lang-option:hover { background: rgba(255, 255, 255, 0.08); }
+.lang-option.on { background: rgba(255, 255, 255, 0.12); font-weight: 700; }
+.lang-check { margin-left: auto; color: oklch(0.75 0.16 85); }
+
+/* Admin panel ichida (Admin.css o'z light-rang sidebar'iga ega) — pastki burchakda bir xilda ko'rinadi */
+@media (max-width: 560px) {
+  .lang-switcher { bottom: 12px; right: 12px; }
+  .lang-menu { width: 170px; }
+}

@@ -1,0 +1,38 @@
+/* Hikoya o'qish: muqova + matn + audio + savollar */
+.strd-cover {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 26px; color: #fff; border: none; min-height: 90px;
+}
+.strd-cover-emoji { font-size: 40px; }
+.strd-cover .ui-badge.accent { background: rgba(255,255,255,.25); color: #fff; }
+
+.strd-cover.violet { background: linear-gradient(135deg, oklch(0.55 0.17 290), oklch(0.4 0.14 290)); }
+.strd-cover.amber { background: linear-gradient(135deg, oklch(0.68 0.15 65), oklch(0.5 0.13 55)); }
+.strd-cover.teal { background: linear-gradient(135deg, oklch(0.62 0.12 185), oklch(0.44 0.1 185)); }
+.strd-cover.rose { background: linear-gradient(135deg, oklch(0.62 0.16 15), oklch(0.46 0.14 10)); }
+.strd-cover.sky { background: linear-gradient(135deg, oklch(0.62 0.12 230), oklch(0.44 0.11 235)); }
+.strd-cover.lime { background: linear-gradient(135deg, oklch(0.68 0.16 130), oklch(0.5 0.13 130)); }
+
+.strd-text p { font-size: 17px; line-height: 1.7; margin-bottom: 16px; }
+.strd-tools { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; padding-top: 10px; border-top: 1px solid var(--u-border); }
+.strd-audio { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+
+.strd-questions { margin-top: 18px; display: flex; flex-direction: column; gap: 12px; }
+.strd-questions h2 { font-size: 16px; margin-bottom: 2px; }
+.strd-q { display: flex; flex-direction: column; gap: 10px; border-width: 2px; transition: border-color .15s, background .15s; }
+.strd-q.ok { border-color: var(--u-ok); background: rgba(34, 197, 94, .06); }
+.strd-q.bad { border-color: var(--u-bad); background: rgba(239, 68, 68, .06); }
+.strd-q-text { font-weight: 600; font-size: 15.5px; }
+
+.strd-options { display: flex; flex-direction: column; gap: 8px; }
+.strd-opt {
+  text-align: left; padding: 10px 14px; border-radius: 10px; border: 1.5px solid var(--u-border);
+  background: var(--u-surface); cursor: pointer; font-size: 14.5px; transition: border-color .15s, background .15s;
+}
+.strd-opt:disabled { cursor: default; }
+.strd-opt.on { border-color: var(--u-accent-ink); background: rgba(99, 102, 241, .08); font-weight: 600; }
+.strd-opt.correct { border-color: var(--u-ok); background: rgba(34, 197, 94, .12); font-weight: 700; }
+
+@media (max-width: 560px) {
+  .strd-tools { flex-direction: column; align-items: stretch; }
+}

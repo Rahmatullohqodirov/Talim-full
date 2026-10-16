@@ -1,0 +1,9 @@
+.status-pill { display: inline-flex; align-items: center; gap: 7px; font-size: 12px; font-weight: 700; padding: 6px 12px; border-radius: 999px; }
+.status-pill .dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+.status-pill.online { background: var(--success-soft); color: oklch(0.4 0.15 155); }
+.status-pill.online .dot { background: oklch(0.55 0.15 155); box-shadow: 0 0 0 3px oklch(0.55 0.15 155 / 0.25); }
+.status-pill.offline { background: oklch(0.96 0.04 60); color: oklch(0.5 0.15 60); }
+.status-pill.offline .dot { background: oklch(0.65 0.18 55); }
+.status-pill.checking { background: oklch(0.95 0.005 260); color: var(--text-muted); }
+.status-pill.checking .dot { background: var(--text-muted); animation: pulse-dot 1.2s infinite; }
+@keyframes pulse-dot { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }

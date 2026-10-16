@@ -1,0 +1,74 @@
+/* Daraja sahifasi: o'rganish (tanishuv + mashq) va so'zlar ro'yxati */
+.vl { display: flex; flex-direction: column; gap: 16px; max-width: 900px; }
+.vl > .ui-head { margin-bottom: 0; }
+.vl-back { display: inline-block; font-size: 13.5px; color: var(--u-ink-soft); text-decoration: none; margin-bottom: 6px; }
+.vl-back:hover { color: var(--u-accent-ink); }
+
+.vl-learn { max-width: 640px; width: 100%; margin: 0 auto; display: flex; flex-direction: column; gap: 14px; }
+.vl-steps { display: flex; align-items: center; gap: 12px; }
+.vl-steps-bar { flex: 1; display: flex; gap: 4px; }
+.vl-steps-bar i { flex: 1; height: 6px; border-radius: 3px; background: var(--u-line); }
+.vl-steps-bar i.done { background: var(--u-accent); }
+.vl-steps-bar i.now { background: var(--u-accent-wash); box-shadow: inset 0 0 0 1.5px var(--u-accent); }
+
+.vl-word { padding: 30px; }
+.vl-word-top { display: flex; gap: 6px; margin-bottom: 14px; }
+.vl-head { font-size: clamp(32px, 5vw, 44px); font-weight: 700; letter-spacing: -0.03em; margin: 0; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.vl-uz { font-size: 21px; margin: 6px 0 0; color: var(--u-accent-ink); font-weight: 500; }
+.vl-example {
+  margin-top: 20px; padding: 12px 16px 12px 18px; border-left: 3px solid var(--u-pen); border-radius: 4px 12px 12px 4px;
+  background: var(--u-pen-wash); font-size: 15px; line-height: 1.55;
+}
+.vl-example p { margin: 0; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.vl-example p + p { margin-top: 2px; }
+.vl-word-actions { display: flex; gap: 8px; margin-top: 26px; flex-wrap: wrap; }
+.vl-speak {
+  width: 40px; height: 40px; border-radius: 12px; border: none; background: var(--u-accent-wash); color: var(--u-accent-ink);
+  cursor: pointer; display: inline-grid; place-items: center; flex-shrink: 0;
+}
+.vl-speak.sm { width: 30px; height: 30px; border-radius: 9px; background: transparent; color: var(--u-ink-soft); }
+.vl-speak:hover, .vl-speak.sm:hover { background: oklch(0.9 0.06 275); color: var(--u-accent-ink); }
+
+.vl-q { padding: 26px; }
+.vl-q-word { font-size: clamp(26px, 4vw, 34px); font-weight: 700; letter-spacing: -0.02em; margin: 6px 0 20px; display: flex; align-items: center; gap: 12px; }
+.vl-listen { width: 76px; height: 76px; border-radius: 50%; border: none; background: var(--u-accent); color: #fff; cursor: pointer; display: grid; place-items: center; }
+.vl-listen:hover { background: var(--u-accent-ink); }
+.vl-options { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.vl-option {
+  display: flex; align-items: center; gap: 10px; text-align: left; padding: 14px; min-height: 56px; border-radius: 14px;
+  border: 1.5px solid var(--u-line); background: var(--u-card); cursor: pointer; font-size: 16px; color: var(--u-ink);
+}
+.vl-option:hover:not(:disabled) { border-color: var(--u-accent); background: var(--u-accent-wash); }
+.vl-option kbd { flex-shrink: 0; width: 24px; height: 24px; border-radius: 7px; display: grid; place-items: center; font: 600 12px/1 inherit; background: var(--u-paper); border: 1px solid var(--u-line); color: var(--u-ink-soft); }
+.vl-option:disabled { cursor: default; }
+.vl-option.correct { border-color: var(--u-ok); background: var(--u-ok-wash); }
+.vl-option.wrong { border-color: var(--u-pen); background: var(--u-pen-wash); }
+.vl-option.dim { opacity: .5; }
+.vl-feedback { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--u-line); font-size: 15px; flex-wrap: wrap; }
+.vl-feedback.ok span { color: oklch(0.45 0.12 155); font-weight: 600; }
+
+.vl-done { max-width: 560px; margin: 0 auto; text-align: center; padding: 34px 24px; }
+.vl-done-score { display: block; font-size: 52px; font-weight: 700; letter-spacing: -0.04em; color: var(--u-ok); line-height: 1; }
+.vl-done h2 { font-size: 21px; margin: 12px 0 6px; }
+.vl-done p { margin: 0 0 6px; }
+.vl-done-actions { display: flex; gap: 10px; justify-content: center; margin-top: 20px; flex-wrap: wrap; }
+.vl-done-actions a { text-decoration: none; }
+
+.vl-list { display: flex; flex-direction: column; gap: 12px; }
+.vl-list-tools { display: flex; flex-direction: column; gap: 10px; }
+.vl-table { padding: 4px 8px; }
+.vl-row { display: grid; grid-template-columns: 30px minmax(0, 1fr) 80px auto; gap: 12px; align-items: center; padding: 10px 8px; border-bottom: 1px solid var(--u-line); }
+.vl-row:last-child { border-bottom: none; }
+.vl-row-main { min-width: 0; font-size: 15px; }
+.vl-row-uz { font-size: 14px; color: var(--u-ink-soft); margin-top: 1px; }
+.vl-row-mastery { height: 6px; border-radius: 3px; background: var(--u-line); overflow: hidden; }
+.vl-row-mastery i { display: block; height: 100%; background: var(--u-ok); }
+.vl-row.learning .vl-row-mastery i { background: var(--u-pen); }
+.vl-pager { display: flex; justify-content: center; align-items: center; gap: 12px; }
+
+@media (max-width: 560px) {
+  .vl-word, .vl-q { padding: 20px 16px; }
+  .vl-options { grid-template-columns: minmax(0, 1fr); }
+  .vl-row { grid-template-columns: 30px minmax(0, 1fr) auto; }
+  .vl-row-mastery { display: none; }
+}

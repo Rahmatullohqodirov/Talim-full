@@ -1,0 +1,32 @@
+# --- Sirlar / kalitlar ---
+.env
+.env.*
+!.env.example
+backend/.env
+frontend/.env
+
+# --- Python / Django ---
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+env/
+*.sqlite3
+staticfiles/
+media/
+
+# --- Node / frontend ---
+node_modules/
+dist/
+frontend/dist/
+.vite/
+
+# --- IDE / OS ---
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# --- Loglar ---
+*.log

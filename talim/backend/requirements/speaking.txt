@@ -1,0 +1,5 @@
+# AI Ustoz — Speaking rejimi uchun (ixtiyoriy). O'rnatilmasa, frontend brauzerning
+# o'z ovoz tanish funksiyasiga o'tadi va matnli suhbat ishlayveradi.
+# faster-whisper ffmpeg'ni o'zi bilan olib keladi (PyAV), alohida o'rnatish shart emas.
+faster-whisper>=1.0
+edge-tts>=6.1

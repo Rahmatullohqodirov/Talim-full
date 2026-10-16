@@ -1,0 +1,542 @@
+
+/* =========================
+   WORD GAME
+========================= */
+
+.wordgame-wrapper {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px 20px 50px;
+}
+
+/* HEADER */
+
+.wordgame-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.page-title {
+  margin: 0 0 7px;
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.page-sub {
+  margin: 0;
+  color: #64748b;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.wordgame-counter {
+  min-width: 80px;
+  padding: 12px 16px;
+  border-radius: 16px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.05);
+}
+
+.wordgame-counter span {
+  font-size: 25px;
+  font-weight: 800;
+  color: #2563eb;
+}
+
+.wordgame-counter small {
+  color: #94a3b8;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* =========================
+   STAGES
+========================= */
+
+.wordgame-stages {
+  padding: 16px;
+  margin-bottom: 18px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.05);
+}
+
+.wordgame-stage-title {
+  margin-bottom: 12px;
+  font-weight: 700;
+  color: #334155;
+}
+
+.wordgame-stage-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.wordgame-stage-btn {
+  width: 42px;
+  height: 42px;
+  border: 1px solid #dbe3ef;
+  border-radius: 12px;
+  background: #f8fafc;
+  color: #475569;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.wordgame-stage-btn:hover {
+  transform: translateY(-2px);
+  border-color: #93c5fd;
+  background: #eff6ff;
+}
+
+.wordgame-stage-btn.active {
+  color: white;
+  border-color: #2563eb;
+  background: #2563eb;
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.25);
+}
+
+/* =========================
+   TOOLBAR
+========================= */
+
+.wordgame-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 18px;
+}
+
+.direction-toggle {
+  display: flex;
+  gap: 6px;
+  padding: 5px;
+  border-radius: 14px;
+  background: #f1f5f9;
+}
+
+.direction-btn {
+  border: none;
+  padding: 9px 14px;
+  border-radius: 10px;
+  background: transparent;
+  color: #64748b;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.direction-btn.active {
+  color: #1e40af;
+  background: #ffffff;
+  box-shadow: 0 3px 10px rgba(15, 23, 42, 0.08);
+}
+
+.wordgame-score {
+  padding: 10px 16px;
+  border-radius: 12px;
+  background: #f8fafc;
+  color: #334155;
+  font-weight: 800;
+  border: 1px solid #e2e8f0;
+}
+
+/* =========================
+   MAIN CARD
+========================= */
+
+.wordgame-card {
+  position: relative;
+  padding: 30px;
+  border-radius: 26px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  box-shadow:
+    0 20px 50px rgba(15, 23, 42, 0.08),
+    0 3px 10px rgba(15, 23, 42, 0.04);
+}
+
+/* CARD TOP */
+
+.wordgame-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.wordgame-stage-label {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 13px;
+  border-radius: 20px;
+  background: #eff6ff;
+  color: #2563eb;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.wordgame-step {
+  color: #64748b;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* =========================
+   PROGRESS BAR
+========================= */
+
+.wordgame-progress-bar {
+  width: 100%;
+  height: 9px;
+  overflow: hidden;
+  margin-bottom: 35px;
+  border-radius: 99px;
+  background: #e2e8f0;
+}
+
+.wordgame-progress-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: #2563eb;
+  transition: width 0.35s ease;
+}
+
+/* =========================
+   WORD
+========================= */
+
+.wordgame-word-section {
+  padding: 34px 20px 30px;
+  margin-bottom: 28px;
+  text-align: center;
+  border-radius: 22px;
+  background: #f8fafc;
+  border: 1px solid #e8eef6;
+}
+
+.wordgame-word-label {
+  margin-bottom: 12px;
+  color: #64748b;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.wordgame-prompt {
+  margin-bottom: 22px;
+  color: #0f172a;
+  font-size: 48px;
+  line-height: 1.15;
+  font-weight: 850;
+  letter-spacing: -1px;
+  word-break: break-word;
+}
+
+.wordgame-speak-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 10px 18px;
+  border: 1px solid #bfdbfe;
+  border-radius: 12px;
+  background: #ffffff;
+  color: #2563eb;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.wordgame-speak-btn:hover {
+  transform: translateY(-2px);
+  background: #eff6ff;
+  box-shadow: 0 7px 18px rgba(37, 99, 235, 0.12);
+}
+
+.wordgame-speak-btn:active {
+  transform: scale(0.97);
+}
+
+/* =========================
+   QUESTION
+========================= */
+
+.wordgame-question {
+  margin-bottom: 15px;
+  color: #334155;
+  font-size: 16px;
+  font-weight: 750;
+}
+
+/* =========================
+   ANSWER OPTIONS
+========================= */
+
+.wordgame-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.wordgame-option {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  min-height: 68px;
+  padding: 13px 16px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 15px;
+  background: #ffffff;
+  color: #1e293b;
+  text-align: left;
+  font-size: 15px;
+  font-weight: 650;
+  cursor: pointer;
+  transition:
+    transform 0.18s ease,
+    border-color 0.18s ease,
+    background 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.wordgame-option:hover:not(:disabled) {
+  transform: translateY(-2px);
+  border-color: #93c5fd;
+  background: #f8fbff;
+  box-shadow: 0 7px 18px rgba(15, 23, 42, 0.07);
+}
+
+.wordgame-option:disabled {
+  cursor: default;
+}
+
+.wordgame-option-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 34px;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: #f1f5f9;
+  color: #64748b;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.wordgame-option.correct {
+  border-color: #22c55e;
+  background: #f0fdf4;
+  color: #166534;
+}
+
+.wordgame-option.correct .wordgame-option-number {
+  background: #22c55e;
+  color: white;
+}
+
+.wordgame-option.wrong {
+  border-color: #ef4444;
+  background: #fef2f2;
+  color: #991b1b;
+}
+
+.wordgame-option.wrong .wordgame-option-number {
+  background: #ef4444;
+  color: white;
+}
+
+.answer-icon {
+  margin-left: auto;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+/* =========================
+   BOTTOM PROGRESS
+========================= */
+
+.wordgame-bottom-progress {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 24px;
+  color: #94a3b8;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* =========================
+   RESULT
+========================= */
+
+.wordgame-result {
+  text-align: center;
+  padding-top: 45px;
+  padding-bottom: 45px;
+}
+
+.result-icon {
+  margin-bottom: 12px;
+  font-size: 55px;
+}
+
+.wordgame-final-score {
+  margin-top: 20px;
+  color: #2563eb;
+  font-size: 64px;
+  line-height: 1;
+  font-weight: 900;
+}
+
+.wordgame-final-score span {
+  color: #94a3b8;
+  font-size: 28px;
+}
+
+.result-percent {
+  margin: 18px 0 28px;
+  color: #64748b;
+  font-size: 16px;
+}
+
+.result-percent strong {
+  color: #2563eb;
+}
+
+.wordgame-finish-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.btn {
+  min-height: 45px;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 12px;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: #2563eb;
+  color: white;
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  background: #1d4ed8;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.22);
+}
+
+/* =========================
+   EMPTY
+========================= */
+
+.wordgame-empty {
+  padding: 50px 20px;
+  text-align: center;
+  border-radius: 22px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+}
+
+.wordgame-empty div {
+  margin-bottom: 10px;
+  font-size: 45px;
+}
+
+.wordgame-empty p {
+  margin: 0 0 6px;
+  color: #334155;
+  font-size: 18px;
+  font-weight: 750;
+}
+
+.wordgame-empty small {
+  color: #94a3b8;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+  .wordgame-wrapper {
+    padding: 18px 12px 35px;
+  }
+
+  .wordgame-header {
+    align-items: flex-start;
+  }
+
+  .page-title {
+    font-size: 25px;
+  }
+
+  .wordgame-counter {
+    min-width: 65px;
+    padding: 9px 11px;
+  }
+
+  .wordgame-counter span {
+    font-size: 20px;
+  }
+
+  .wordgame-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .direction-toggle {
+    width: 100%;
+  }
+
+  .direction-btn {
+    flex: 1;
+  }
+
+  .wordgame-score {
+    text-align: center;
+  }
+
+  .wordgame-card {
+    padding: 18px;
+    border-radius: 20px;
+  }
+
+  .wordgame-prompt {
+    font-size: 38px;
+  }
+
+  .wordgame-options {
+    grid-template-columns: 1fr;
+  }
+
+  .wordgame-option {
+    min-height: 62px;
+  }
+
+  .wordgame-final-score {
+    font-size: 52px;
+  }
+}
+

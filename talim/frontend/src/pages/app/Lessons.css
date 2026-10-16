@@ -1,0 +1,28 @@
+/* Darslar: grammatika darsi kartalari + hikoyalar kutubxonasi */
+.lsn-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 14px; }
+
+.lsn-card { text-align: left; cursor: pointer; display: flex; flex-direction: column; gap: 8px; }
+.lsn-num { font-size: 12px; font-weight: 700; color: var(--u-accent-ink); text-transform: uppercase; letter-spacing: .04em; }
+.lsn-card h2 { font-size: 16.5px; line-height: 1.3; }
+.lsn-card-meta { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: auto; padding-top: 4px; }
+.lsn-card.done { border-color: var(--u-ok); }
+
+.lsn-story {
+  text-align: left; cursor: pointer; display: flex; flex-direction: column; gap: 10px; color: #fff; border: none;
+  min-height: 150px; justify-content: flex-end;
+}
+.lsn-story h2 { color: #fff; font-size: 17px; }
+.lsn-story .ui-faint { color: rgba(255, 255, 255, .72); }
+.lsn-story .ui-badge.accent { background: rgba(255, 255, 255, .22); color: #fff; }
+.lsn-story-cover { font-size: 34px; line-height: 1; }
+
+.lsn-story.violet { background: linear-gradient(135deg, oklch(0.55 0.17 290), oklch(0.4 0.14 290)); }
+.lsn-story.amber { background: linear-gradient(135deg, oklch(0.68 0.15 65), oklch(0.5 0.13 55)); }
+.lsn-story.teal { background: linear-gradient(135deg, oklch(0.62 0.12 185), oklch(0.44 0.1 185)); }
+.lsn-story.rose { background: linear-gradient(135deg, oklch(0.62 0.16 15), oklch(0.46 0.14 10)); }
+.lsn-story.sky { background: linear-gradient(135deg, oklch(0.62 0.12 230), oklch(0.44 0.11 235)); }
+.lsn-story.lime { background: linear-gradient(135deg, oklch(0.68 0.16 130), oklch(0.5 0.13 130)); }
+
+@media (max-width: 560px) {
+  .lsn-grid { grid-template-columns: 1fr; }
+}

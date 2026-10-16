@@ -1,0 +1,45 @@
+/* Profil sahifasi */
+.prof-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+.prof-card h2 { font-size: 16px; margin-bottom: 14px; }
+
+.prof-avatar-row { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+.prof-avatar-big {
+  width: 56px; height: 56px; border-radius: 50%; overflow: hidden;
+  background: linear-gradient(135deg, var(--u-accent), var(--u-accent-ink));
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; font-weight: 800; font-size: 20px; flex-shrink: 0;
+}
+.prof-avatar-big img { width: 100%; height: 100%; object-fit: cover; }
+
+.prof-subhead { font-size: 12.5px; font-weight: 700; color: var(--u-ink-faint); text-transform: uppercase; letter-spacing: .03em; margin: 14px 0 8px; }
+
+.prof-avatar-grid { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 4px; }
+.prof-avatar-pick {
+  width: 44px; height: 44px; border-radius: 50%; overflow: hidden; border: 2px solid transparent;
+  background: var(--u-accent-wash); cursor: pointer; display: flex; align-items: center; justify-content: center;
+  font-weight: 700; color: var(--u-ink-faint); padding: 0;
+}
+.prof-avatar-pick img { width: 100%; height: 100%; object-fit: cover; }
+.prof-avatar-pick.on { border-color: var(--u-accent-ink); }
+.prof-avatar-pick:disabled { opacity: .6; cursor: default; }
+
+.prof-form { display: flex; flex-direction: column; gap: 12px; margin-top: 16px; }
+.prof-field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.prof-form .field { display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600; color: var(--u-ink-faint); }
+.prof-form .field .input { font-weight: 400; color: var(--u-ink); }
+
+.prof-stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px 10px; margin-bottom: 4px; }
+.prof-stat { text-align: center; padding: 14px 8px; border-radius: 12px; background: var(--u-accent-wash); }
+.prof-stat-n { font-size: 24px; font-weight: 800; color: var(--u-accent-ink); }
+
+.prof-sub-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+
+@media (max-width: 860px) {
+  .prof-grid { grid-template-columns: 1fr; }
+  .prof-field-row { grid-template-columns: 1fr; }
+}
