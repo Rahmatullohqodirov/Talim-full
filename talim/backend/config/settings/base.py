@@ -78,12 +78,7 @@ MIDDLEWARE = [
 ROOT_URLCONF = "config.urls"
 ASGI_APPLICATION = "config.asgi.application"
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
-    }
-}
+DATABASE_URL="postgresql://neondb_owner:PAROLNI_YANGILA@ep-falling-sound-b5rr4l98-pooler.c-7.us-east-2.aws.neon.tech/neondb?sslmode=require&channel_binding=require"
 
 TEMPLATES = [
     {
@@ -159,11 +154,7 @@ CLICK_SERVICE_ID = config("CLICK_SERVICE_ID", default="")
 CLICK_MERCHANT_ID = config("CLICK_MERCHANT_ID", default="")
 CLICK_SECRET_KEY = config("CLICK_SECRET_KEY", default="")  # Click imzo (sign_string) tekshiruvi uchun
 
-CORS_ALLOWED_ORIGINS = config(
-    "CORS_ALLOWED_ORIGINS",
-    default="http://localhost:5173,http://127.0.0.1:5173",
-    cast=lambda v: [s.strip() for s in v.split(",")],
-)
+
 CORS_ALLOW_CREDENTIALS = True
 
 LANGUAGE_CODE = "en-us"
@@ -195,5 +186,33 @@ CACHES = {
     "default": {
         "BACKEND": "django.core.cache.backends.locmem.LocMemCache",
         "LOCATION": "talim-production-cache",
+    }
+}
+
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+]
+
+
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "neondb",
+        "USER": "neondb_owner",
+        "PASSWORD": os.getenv("DB_PASSWORD"),
+        "HOST": "ep-falling-sound-b5rr4l98-pooler.c-7.us-east-2.aws.neon.tech",
+        "PORT": "5432",
+        "OPTIONS": {
+            "sslmode": "require",
+            "channel_binding": "require",
+        },
     }
 }
