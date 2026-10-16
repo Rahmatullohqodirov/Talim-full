@@ -15,7 +15,7 @@ env/
 *.sqlite3
 staticfiles/
 media/
-
+mobile/
 # --- Node / frontend ---
 node_modules/
 dist/
