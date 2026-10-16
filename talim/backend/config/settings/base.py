@@ -100,12 +100,6 @@ TEMPLATES = [
     },
 ]
 
-CACHES = {
-    "default": {
-        "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": config("REDIS_URL", default="redis://localhost:6379/1"),
-    }
-}
 
 CHANNEL_LAYERS = {
     "default": {
@@ -196,3 +190,10 @@ WHISPER_MODEL_SIZE = config("WHISPER_MODEL_SIZE", default="small")  # tiny | bas
 SPEAKING_MAX_UPLOAD_MB = config("SPEAKING_MAX_UPLOAD_MB", default=10, cast=int)
 
 
+# Production uchun vaqtinchalik lokal kesh
+CACHES = {
+    "default": {
+        "BACKEND": "django.core.cache.backends.locmem.LocMemCache",
+        "LOCATION": "talim-production-cache",
+    }
+}
