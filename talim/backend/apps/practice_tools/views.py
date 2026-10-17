@@ -307,6 +307,6 @@ class FlashcardViewSet(viewsets.ModelViewSet):
     http_method_names = ["get", "post", "patch", "delete", "head"]
 
     def get_permissions(self):
-        if self.request.method == "GET":
-            return [permissions.IsAuthenticated()]
+        if self.request.method in ["GET", "HEAD"]:
+            return [permissions.AllowAny()]
         return [permissions.IsAdminUser()]
