@@ -1,50 +1,181 @@
-/* So'z boyligi — bosh sahifa */
-.vocab { display: flex; flex-direction: column; gap: 20px; }
-.vocab > .ui-head { margin-bottom: 0; }
-.vocab-h2 { font-size: 16px; font-weight: 600; margin: 0 0 12px; }
+/* Responsive: Vocabulary — all screen sizes */
 
-.vocab-today { display: flex; gap: 28px; align-items: center; padding: 26px; }
-.vocab-today-level {
-  flex-shrink: 0; width: 120px; height: 140px; border-radius: 16px; display: grid; place-items: center;
-  font-size: 46px; font-weight: 700; letter-spacing: -0.04em; color: #fff; background: var(--u-accent);
-  background-image: repeating-linear-gradient(to bottom, transparent 0 27px, rgba(255, 255, 255, .16) 27px 28px);
-  box-shadow: 8px 8px 0 var(--u-accent-wash);
+.vocab {
+  width: 100%;
+  min-width: 0;
 }
-.vocab-today-body h2 { font-size: 21px; margin-bottom: 4px; }
 
-.vocab-levels { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.vocab > *,
+.vocab-today,
+.vocab-today-body,
+.vocab-level,
+.vocab-extra,
+.vocab-dict,
+.vocab-dictlink {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.vocab-today-body {
+  flex: 1;
+  overflow-wrap: anywhere;
+}
+
+.vocab-levels {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 .vocab-level {
-  position: relative; text-align: left; display: flex; flex-direction: column; gap: 6px; cursor: pointer; color: var(--u-ink);
-  transition: border-color .15s, transform .15s;
+  overflow-wrap: anywhere;
 }
-.vocab-level:hover:not(:disabled) { border-color: var(--u-accent); transform: translateY(-1px); }
-.vocab-level:disabled { opacity: .5; cursor: not-allowed; }
-.vocab-level.rec { border-color: var(--u-accent); box-shadow: 0 0 0 3px var(--u-accent-wash); }
-.vocab-level-code { font-size: 26px; font-weight: 700; letter-spacing: -0.03em; }
-.vocab-level-name { font-size: 13.5px; color: var(--u-ink-soft); margin-bottom: 6px; }
-.vocab-level-count { font-size: 13px; color: var(--u-ink-soft); }
-.vocab-level-count strong { color: var(--u-ink); }
-.vocab-level-badge { position: absolute; top: 16px; right: 16px; font-size: 12px; font-weight: 600; color: var(--u-accent-ink); background: var(--u-accent-wash); padding: 3px 10px; border-radius: 999px; }
 
-.vocab-extra { display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; align-items: stretch; }
-.vocab-dictlink { background: var(--u-card); color: var(--u-ink); border-color: var(--u-line); }
-.vocab-dictlink h2 { color: var(--u-ink); }
-.vocab-dictlink .ui-muted { color: var(--u-ink-soft); }
-.vocab-dictlink:hover { border-color: var(--u-accent); }
-.vocab-dict h2 { margin-bottom: 12px; }
-.vocab-dict-form { display: flex; gap: 8px; }
-.vocab-dict-result { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: 12px; padding: 12px 14px; border-radius: 12px; background: var(--u-paper); font-size: 14.5px; line-height: 1.5; }
-.vocab-saved { margin-top: 12px; font-size: 14px; }
-.vocab-saved summary { cursor: pointer; color: var(--u-ink-soft); }
-.vocab-saved ul { list-style: none; margin: 8px 0 0; padding: 0; max-height: 220px; overflow-y: auto; }
-.vocab-saved li { display: flex; justify-content: space-between; align-items: center; padding: 6px 0; border-bottom: 1px solid var(--u-line); }
-.vocab-x { border: none; background: none; font-size: 18px; color: var(--u-ink-faint); cursor: pointer; width: 28px; height: 28px; border-radius: 8px; }
-.vocab-x:hover { background: var(--u-bad-wash); color: var(--u-bad); }
+.vocab-level-badge {
+  max-width: calc(100% - 24px);
+}
 
+.vocab-dict-form {
+  width: 100%;
+  min-width: 0;
+}
+
+.vocab-dict-form input {
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+}
+
+.vocab-dict-form button {
+  flex-shrink: 0;
+}
+
+.vocab-dict-result {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.vocab-dict-result > * {
+  min-width: 0;
+}
+
+.vocab-saved li {
+  gap: 8px;
+  min-width: 0;
+}
+
+.vocab-saved li > *:first-child {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.vocab-x {
+  flex-shrink: 0;
+}
+
+/* Planshet va kichik noutbuk */
 @media (max-width: 900px) {
-  .vocab-levels { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .vocab {
+    gap: 16px;
+  }
+
+  .vocab-today {
+    gap: 20px;
+    padding: 22px;
+  }
+
+  .vocab-levels {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
 }
+
+/* Telefon */
 @media (max-width: 560px) {
-  .vocab-today { flex-direction: column; align-items: flex-start; gap: 18px; padding: 20px; }
-  .vocab-today-level { width: 84px; height: 96px; font-size: 32px; }
+  .vocab {
+    gap: 16px;
+  }
+
+  .vocab-today {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 16px;
+  }
+
+  .vocab-today-level {
+    width: 76px;
+    height: 86px;
+    font-size: 30px;
+  }
+
+  .vocab-today-body h2 {
+    font-size: 19px;
+    overflow-wrap: anywhere;
+  }
+
+  .vocab-h2 {
+    font-size: 15px;
+  }
+
+  .vocab-levels {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .vocab-level {
+    padding: 16px;
+  }
+
+  .vocab-level-code {
+    font-size: 24px;
+  }
+
+  .vocab-level-badge {
+    top: 12px;
+    right: 12px;
+    font-size: 11px;
+  }
+
+  .vocab-dict-form {
+    align-items: stretch;
+  }
+
+  .vocab-dict-form input {
+    font-size: 16px;
+  }
+
+  .vocab-dict-result {
+    align-items: flex-start;
+    gap: 8px;
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .vocab-saved li {
+    padding: 9px 0;
+  }
+}
+
+/* Juda kichik telefonlar */
+@media (max-width: 360px) {
+  .vocab-today {
+    padding: 14px 12px;
+  }
+
+  .vocab-level {
+    padding: 14px 12px;
+  }
+
+  .vocab-level-badge {
+    position: static;
+    align-self: flex-start;
+    margin-top: 4px;
+  }
+
+  .vocab-dict-form {
+    flex-wrap: wrap;
+  }
+
+  .vocab-dict-form button {
+    width: 100%;
+  }
 }

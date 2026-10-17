@@ -1,96 +1,229 @@
-@import url("https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&display=swap");
+/* ==========================================
+   OPTIMA TA'LIM — SHARED UI RESPONSIVENESS
+   Phone • Tablet • Laptop • Desktop
+   ========================================== */
 
-/* Umumiy dizayn tokenlari: Dashboard, Quiz, Flashcard, Vocabulary, Video, Leaderboard.
-   AI Ustoz sahifasi bilan bir xil palitra: siyoh (ink), qog'oz (paper), binafsha aksent,
-   amber — "o'qituvchi ruchkasi" (streak, xato, diqqat). */
 .ui {
-  --u-ink: #1f2342;
-  --u-ink-soft: #5d6283;
-  --u-ink-faint: #9a9db5;
-  --u-paper: #f7f7fb;
-  --u-card: #ffffff;
-  --u-line: #e6e7f0;
-  --u-accent: oklch(0.56 0.19 275);
-  --u-accent-ink: oklch(0.45 0.19 275);
-  --u-accent-wash: oklch(0.95 0.035 275);
-  --u-pen: #d98a12;
-  --u-pen-wash: #fff6e6;
-  --u-ok: oklch(0.6 0.14 155);
-  --u-ok-wash: oklch(0.96 0.04 155);
-  --u-bad: #c2410c;
-  --u-bad-wash: #fff1eb;
-  --u-radius: 18px;
-
-  font-family: "Onest", var(--font-body);
-  color: var(--u-ink);
+  width: 100%;
+  min-width: 0;
   max-width: 1160px;
+  box-sizing: border-box;
 }
-.ui button, .ui input, .ui select { font-family: inherit; }
-.ui :focus-visible { outline: 2px solid var(--u-accent); outline-offset: 2px; }
 
-.ui-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 22px; }
-.ui-head h1 { font-size: clamp(24px, 2.6vw, 30px); font-weight: 700; letter-spacing: -0.025em; margin: 0 0 4px; line-height: 1.15; }
-.ui-head p { margin: 0; color: var(--u-ink-soft); font-size: 15px; line-height: 1.5; max-width: 60ch; }
+.ui *,
+.ui *::before,
+.ui *::after {
+  box-sizing: border-box;
+}
 
-.ui-card { background: var(--u-card); border: 1px solid var(--u-line); border-radius: var(--u-radius); padding: 20px; min-width: 0; }
-:where(.ui-card) h2 { font-size: 16px; font-weight: 600; margin: 0; letter-spacing: -0.01em; }
-.ui-card-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; flex-wrap: wrap; }
-.ui-muted { color: var(--u-ink-soft); font-size: 14px; line-height: 1.5; }
-.ui-faint { color: var(--u-ink-faint); font-size: 13px; }
+.ui-head,
+.ui-card-head {
+  min-width: 0;
+  flex-wrap: wrap;
+}
 
-.ui-tabs { display: inline-flex; gap: 2px; padding: 3px; background: var(--u-paper); border: 1px solid var(--u-line); border-radius: 12px; }
+.ui-head > *,
+.ui-card-head > * {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.ui-head h1,
+.ui-head p,
+.ui-card h2,
+.ui-muted,
+.ui-alert,
+.ui-empty {
+  overflow-wrap: anywhere;
+}
+
+.ui-card {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.ui-tabs {
+  max-width: 100%;
+  min-width: 0;
+}
+
 .ui-tabs button {
-  border: none; background: transparent; padding: 7px 14px; border-radius: 9px; font-size: 13.5px; font-weight: 500;
-  color: var(--u-ink-soft); cursor: pointer; white-space: nowrap;
+  min-width: 0;
 }
-.ui-tabs button.on { background: var(--u-card); color: var(--u-ink); box-shadow: 0 1px 3px rgba(31, 35, 66, .12); font-weight: 600; }
 
-.ui-chips { display: flex; flex-wrap: wrap; gap: 8px; }
-.ui-chip {
-  height: 34px; padding: 0 14px; border-radius: 999px; border: 1px solid var(--u-line); background: var(--u-card);
-  font-size: 13.5px; font-weight: 500; cursor: pointer; color: var(--u-ink); display: inline-flex; align-items: center; gap: 6px;
+.ui-chips {
+  min-width: 0;
 }
-.ui-chip:hover { border-color: var(--u-accent); }
-.ui-chip.on { background: var(--u-ink); border-color: var(--u-ink); color: #fff; }
-.ui-chip small { font-size: 12px; opacity: .65; font-weight: 500; }
+
+.ui-chip {
+  max-width: 100%;
+  min-height: 38px;
+  height: auto;
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
 
 .ui-btn {
-  height: 42px; padding: 0 18px; border-radius: 12px; border: 1px solid var(--u-line); background: var(--u-card);
-  font-size: 14.5px; font-weight: 600; cursor: pointer; color: var(--u-ink);
-  display: inline-flex; align-items: center; justify-content: center; gap: 8px; transition: background .15s, border-color .15s;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 42px;
+  white-space: normal;
+  overflow-wrap: anywhere;
 }
-.ui-btn:hover:not(:disabled) { border-color: #c9cbdb; }
-.ui-btn.primary { background: var(--u-accent); border-color: var(--u-accent); color: #fff; }
-.ui-btn.primary:hover:not(:disabled) { background: var(--u-accent-ink); }
-.ui-btn.ink { background: var(--u-ink); border-color: var(--u-ink); color: #fff; }
-.ui-btn:disabled { opacity: .45; cursor: not-allowed; }
-.ui-btn.sm { height: 34px; padding: 0 12px; font-size: 13px; border-radius: 10px; }
-
-.ui-badge { display: inline-flex; align-items: center; gap: 4px; font-size: 12px; font-weight: 600; padding: 3px 9px; border-radius: 999px; background: var(--u-paper); color: var(--u-ink-soft); border: 1px solid var(--u-line); }
-.ui-badge.accent { background: var(--u-accent-wash); color: var(--u-accent-ink); border-color: transparent; }
-.ui-badge.ok { background: var(--u-ok-wash); color: oklch(0.45 0.12 155); border-color: transparent; }
-.ui-badge.pen { background: var(--u-pen-wash); color: #9a5b00; border-color: transparent; }
-
-.ui-bar { height: 8px; border-radius: 99px; background: var(--u-line); overflow: hidden; }
-.ui-bar > i { display: block; height: 100%; border-radius: inherit; background: var(--u-accent); transition: width .4s ease; }
-.ui-bar.ok > i { background: var(--u-ok); }
-
-.ui-empty { text-align: center; padding: 36px 16px; color: var(--u-ink-soft); font-size: 14.5px; line-height: 1.6; }
-.ui-empty strong { display: block; color: var(--u-ink); font-size: 16px; margin-bottom: 4px; }
-.ui-alert { padding: 12px 14px; border-radius: 12px; font-size: 14px; line-height: 1.5; background: var(--u-pen-wash); color: #7a4a00; }
-.ui-alert.bad { background: var(--u-bad-wash); color: #9a2f05; }
 
 .ui-input {
-  height: 44px; width: 100%; padding: 0 14px; border-radius: 12px; border: 1px solid var(--u-line); background: var(--u-card);
-  font-size: 15px; color: var(--u-ink); outline: none;
+  min-width: 0;
+  max-width: 100%;
+  font-size: 16px;
 }
-.ui-input:focus { border-color: var(--u-accent); box-shadow: 0 0 0 3px var(--u-accent-wash); }
 
-.ui-skeleton { background: linear-gradient(90deg, var(--u-paper), #eceef5, var(--u-paper)); background-size: 200% 100%; animation: ui-shimmer 1.2s infinite; border-radius: 12px; }
-@keyframes ui-shimmer { from { background-position: 200% 0; } to { background-position: -200% 0; } }
+.ui-bar {
+  max-width: 100%;
+}
 
-.ui-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.ui-skeleton {
+  min-width: 0;
+  max-width: 100%;
+}
 
+/* Planshet */
+@media (max-width: 900px) {
+  .ui {
+    width: 100%;
+  }
+
+  .ui-head {
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+
+  .ui-head p {
+    max-width: 100%;
+  }
+
+  .ui-card {
+    padding: 18px;
+    border-radius: 16px;
+  }
+
+  .ui-tabs {
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .ui-tabs button {
+    flex-shrink: 0;
+  }
+}
+
+/* Telefon */
+@media (max-width: 560px) {
+  .ui-head {
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .ui-head h1 {
+    font-size: clamp(23px, 6vw, 28px);
+    line-height: 1.2;
+  }
+
+  .ui-head p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .ui-card {
+    padding: 15px;
+    border-radius: 14px;
+  }
+
+  .ui-card-head {
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+
+  .ui-tabs {
+    width: 100%;
+    gap: 3px;
+    border-radius: 10px;
+  }
+
+  .ui-tabs button {
+    padding: 9px 12px;
+    min-height: 38px;
+    font-size: 13px;
+  }
+
+  .ui-chips {
+    gap: 7px;
+  }
+
+  .ui-chip {
+    font-size: 13px;
+    padding-left: 11px;
+    padding-right: 11px;
+  }
+
+  .ui-btn {
+    min-height: 44px;
+    padding-left: 13px;
+    padding-right: 13px;
+    font-size: 14px;
+  }
+
+  .ui-btn.sm {
+    min-height: 38px;
+  }
+
+  .ui-input {
+    height: 46px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .ui-empty {
+    padding: 26px 12px;
+  }
+
+  .ui-alert {
+    padding: 11px 12px;
+    font-size: 13.5px;
+  }
+}
+
+/* Juda kichik telefonlar */
+@media (max-width: 360px) {
+  .ui-card {
+    padding: 12px;
+  }
+
+  .ui-head h1 {
+    font-size: 23px;
+  }
+
+  .ui-btn {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .ui-tabs button {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+/* Animatsiyani kamaytirish sozlamasi */
 @media (prefers-reduced-motion: reduce) {
-  .ui *, .ui { animation: none !important; transition: none !important; }
+  .ui *,
+  .ui *::before,
+  .ui *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

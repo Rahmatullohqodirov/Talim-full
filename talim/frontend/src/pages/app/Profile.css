@@ -1,45 +1,149 @@
-/* Profil sahifasi */
+
+/* ===== Profile: responsive ===== */
+
+.prof-grid,
+.prof-card,
+.prof-form,
+.prof-field-row,
+.prof-stats-grid {
+  min-width: 0;
+  box-sizing: border-box;
+}
+
 .prof-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-  align-items: start;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
-.prof-card h2 { font-size: 16px; margin-bottom: 14px; }
 
-.prof-avatar-row { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
-.prof-avatar-big {
-  width: 56px; height: 56px; border-radius: 50%; overflow: hidden;
-  background: linear-gradient(135deg, var(--u-accent), var(--u-accent-ink));
-  display: flex; align-items: center; justify-content: center;
-  color: #fff; font-weight: 800; font-size: 20px; flex-shrink: 0;
+.prof-card {
+  min-width: 0;
+  max-width: 100%;
 }
-.prof-avatar-big img { width: 100%; height: 100%; object-fit: cover; }
 
-.prof-subhead { font-size: 12.5px; font-weight: 700; color: var(--u-ink-faint); text-transform: uppercase; letter-spacing: .03em; margin: 14px 0 8px; }
-
-.prof-avatar-grid { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 4px; }
-.prof-avatar-pick {
-  width: 44px; height: 44px; border-radius: 50%; overflow: hidden; border: 2px solid transparent;
-  background: var(--u-accent-wash); cursor: pointer; display: flex; align-items: center; justify-content: center;
-  font-weight: 700; color: var(--u-ink-faint); padding: 0;
+.prof-card h2,
+.prof-subhead,
+.prof-stat-n {
+  overflow-wrap: anywhere;
 }
-.prof-avatar-pick img { width: 100%; height: 100%; object-fit: cover; }
-.prof-avatar-pick.on { border-color: var(--u-accent-ink); }
-.prof-avatar-pick:disabled { opacity: .6; cursor: default; }
 
-.prof-form { display: flex; flex-direction: column; gap: 12px; margin-top: 16px; }
-.prof-field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.prof-form .field { display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600; color: var(--u-ink-faint); }
-.prof-form .field .input { font-weight: 400; color: var(--u-ink); }
+.prof-avatar-row {
+  min-width: 0;
+  flex-wrap: wrap;
+}
 
-.prof-stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px 10px; margin-bottom: 4px; }
-.prof-stat { text-align: center; padding: 14px 8px; border-radius: 12px; background: var(--u-accent-wash); }
-.prof-stat-n { font-size: 24px; font-weight: 800; color: var(--u-accent-ink); }
+.prof-avatar-row > * {
+  min-width: 0;
+}
 
-.prof-sub-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.prof-form .field {
+  min-width: 0;
+}
 
+.prof-form .field .input,
+.prof-form input,
+.prof-form select,
+.prof-form textarea {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.prof-sub-row {
+  flex-wrap: wrap;
+}
+
+.prof-sub-row > * {
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* Planshet */
 @media (max-width: 860px) {
-  .prof-grid { grid-template-columns: 1fr; }
-  .prof-field-row { grid-template-columns: 1fr; }
+  .prof-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .prof-field-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Telefon */
+@media (max-width: 560px) {
+  .prof-grid {
+    gap: 12px;
+  }
+
+  .prof-card h2 {
+    font-size: 15px;
+    margin-bottom: 12px;
+  }
+
+  .prof-avatar-row {
+    gap: 12px;
+  }
+
+  .prof-avatar-big {
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+  }
+
+  .prof-avatar-grid {
+    gap: 8px;
+  }
+
+  .prof-avatar-pick {
+    width: 42px;
+    height: 42px;
+    flex: 0 0 42px;
+  }
+
+  .prof-field-row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .prof-form {
+    gap: 10px;
+  }
+
+  .prof-stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .prof-stat {
+    padding: 12px 6px;
+  }
+
+  .prof-stat-n {
+    font-size: 21px;
+  }
+
+  .prof-sub-row {
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
+/* Kichik telefon */
+@media (max-width: 360px) {
+  .prof-avatar-pick {
+    width: 38px;
+    height: 38px;
+    flex-basis: 38px;
+  }
+
+  .prof-stats-grid {
+    gap: 8px;
+  }
+
+  .prof-stat {
+    padding: 10px 4px;
+  }
+
+  .prof-stat-n {
+    font-size: 19px;
+  }
 }
